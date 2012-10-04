@@ -17,8 +17,8 @@ namespace Chess.Pieces
             moves = new List<IMove>();
             moves.Add(new FixedMove(1, 2));
             moves.Add(new FixedMove(2, 1));
-            moves.Add(new FixedMove(-1, 2));
-            moves.Add(new FixedMove(-2, 1));
+            moves.Add(new FixedMove(1, -2));
+            moves.Add(new FixedMove(2, -1));
             moves.Add(new FixedMove(-1, -2));
             moves.Add(new FixedMove(-2, -1));
             moves.Add(new FixedMove(-1, 2));
