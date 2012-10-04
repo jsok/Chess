@@ -26,6 +26,8 @@ namespace Chess
                 foreach (IPiece piece in pieces)
                 {
                     List<Position> moves = piece.findValidMoves(board);
+                    moves.Sort();
+
                     List<String> movesOutput = new List<string>();
                     moves.ForEach(p => movesOutput.Add(p.ToString()));
 

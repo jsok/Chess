@@ -11,7 +11,7 @@ namespace Chess
     /// Only minimal work is done to ensure the position is sane.
     /// Position validation is delegated to the Board.
     /// </summary>
-    public class Position
+    public class Position : IComparable
     {
         public enum Placement
         {
@@ -78,6 +78,16 @@ namespace Chess
             Char column = (Char)('a' + this.col);
             // Return human readable board position
             return String.Format("{0}{1}", column, this.row + 1);
+        }
+
+        public int CompareTo(object obj)
+        {
+            Position p = (Position)obj;
+
+            if (p.Column == this.Column)
+                return this.Row.CompareTo(p.Row);
+            else
+                return this.Column.CompareTo(p.Column);
         }
     }
 }
