@@ -55,5 +55,10 @@ namespace Chess.Pieces
 
             return validPositions;
         }
+
+        public bool isFriendly(IPiece piece)
+        {
+            return (piece.Colour == this.Colour);
+        }
     }
 }

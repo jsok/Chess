@@ -26,5 +26,7 @@ namespace Chess.Pieces
         /// <param name="board">The given board state</param>
         /// <returns>A list of positions on the board</returns>
         List<Position> findValidMoves(Board board);
+
+        Boolean isFriendly(IPiece piece);
     }
 }

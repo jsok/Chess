@@ -65,7 +65,7 @@ namespace Chess
             if (isPieceAtPosition(position))
             {
                 IPiece occupier = getPieceAtPosition(position);
-                if (occupier.Colour == piece.Colour)
+                if (piece.isFriendly(occupier))
                     return Position.Placement.BLOCKED;
                 else
                     return Position.Placement.CAPTURE;
