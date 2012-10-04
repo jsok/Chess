@@ -74,6 +74,55 @@ namespace Chess
             return Position.Placement.VALID;
         }
 
-    }
+        public override string ToString()
+        {
+            String repr = String.Empty;
+            int col;
+            int row;
 
+            for (row = BOARD_DIMENSION - 1; row >= 0; row--)
+            {
+                repr += "   -";
+                for (col = 0; col < BOARD_DIMENSION; col++)
+                {
+                    repr += "----";
+                }
+                repr += "\n";
+
+                repr += String.Format(" {0} |", row + 1);
+                for (col = 0; col < BOARD_DIMENSION; col++)
+                {
+                    Position p = new Position(col, row);
+                    if (isPieceAtPosition(p))
+                    {
+                        repr += String.Format(" {0} |", getPieceAtPosition(p).Avatar);
+                    }
+                    else
+                    {
+                        repr += "   |";
+                    }
+                }
+                repr += "\n";
+            }
+
+            repr += "   -";
+            for (col = 0; col < BOARD_DIMENSION; col++)
+            {
+                repr += "----";
+            }
+            repr += "\n";
+
+            repr += "    ";
+            Char colChar = 'a';
+            for (col = 0; col < BOARD_DIMENSION; col++)
+            {
+                repr += String.Format(" {0}  ", colChar);
+                colChar++;
+            }
+
+            repr += "\n";
+            return repr;
+        }
+
+    }
 }
