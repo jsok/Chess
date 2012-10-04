@@ -37,6 +37,10 @@ namespace Chess
                         String.Join(", ", movesOutput.ToArray())));
                 }
 
+                //Console.WriteLine();
+                //Console.Write(board.ToString());
+
+                Console.WriteLine();
                 Console.Write("Continue (Y/N)?: ");
                 String input = Console.ReadLine();
 
@@ -57,6 +61,7 @@ namespace Chess
                 if (!Int32.TryParse(input, out numberPieces))
                     numberPieces = -1;
             }
+            Console.WriteLine();
 
             int i;
             for (i = 1; i <= numberPieces; i++)
@@ -99,10 +104,12 @@ namespace Chess
                 else
                     piece = new Bishop(colour, p);
 
+                Console.WriteLine();
                 pieces.Add(piece);
             }
 
             return pieces;
         }
+
     }
 }
